@@ -1,0 +1,9 @@
+---
+// Import statements and any server-side logic here (if needed)
+---
+<script src="https://unpkg.com/htmx.org" defer></script>
+
+<div>
+  <button hx-get="/api/deaths" hx-target="#death-list" hx-swap="innerHTML">Check Deaths</button>
+  <div id="death-list">Death list will appear here...</div>
+</div>

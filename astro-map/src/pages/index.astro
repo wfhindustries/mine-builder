@@ -1,0 +1,23 @@
+---
+import PlayerDisplay from '../components/PlayerDisplay.astro'
+import CommandInput  from '../components/CommandInput.astro'
+import RconList from '../components/RconList.astro'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Minecraft Server Info:</title>
+	</head>
+	<body>
+		<h1>Players</h1>
+    	<PlayerDisplay/>
+		<h3>Send a command to the server:</h3>
+		<CommandInput/>
+		<h3>Deaths:</h3>
+		<RconList/>
+	</body>
+</html>

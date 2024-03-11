@@ -1,0 +1,9 @@
+---
+
+---
+
+<script src="https://unpkg.com/htmx.org"></script>
+
+<div id="player-list" hx-get="/api/players" hx-trigger="load, every 30000ms" hx-swap="outerHTML">
+  Loading players...
+</div>

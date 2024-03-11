@@ -1,0 +1,38 @@
+---
+---
+
+<script src="https://unpkg.com/htmx.org"></script>
+
+<form hx-post="/api/message" hx-target="#rcon-response" hx-encoding="multipart/form-data">
+    <div>
+      <label for="command">RCON Command:</label>
+      <input type="text" id="command" name="command" required>
+    </div>
+    <button type="submit">Send Command</button>
+  </form>
+  
+  <div id="rcon-response"></div>
+
+  <script>
+    document.body.addEventListener('htmx:afterRequest', function(evt) {
+      if (evt.detail.path === "/api/message") {
+        const responseContainer = document.querySelector('#rcon-response');
+        evt.detail.response.json().then(data => {
+          responseContainer.textContent = data.message || 'An error occurred';
+        }).catch(() => {
+          responseContainer.textContent = 'Failed to parse server response.';
+        });
+      }
+    });
+  </script>
+  <script>
+    document.body.addEventListener('htmx:afterOnLoad', function(event) {
+      const target = document.querySelector('#message-response');
+      if (target && target.textContent.trim() === "Message sent!") {
+        setTimeout(() => {
+          target.textContent = ''; // Clear the message
+        }, 1000); // Adjust time as needed (1000ms = 1 second)
+      }
+    });
+    </script>
+    
