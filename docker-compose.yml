@@ -20,7 +20,7 @@ services:
     restart: unless-stopped
   astro:
     image: node:20
-    command: sh -c "npx astro dev --host"
+    command: sh -c "npm install && npx astro dev --host"
     working_dir: /app
     volumes:
       - ./astro-map:/app
