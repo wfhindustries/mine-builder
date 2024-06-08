@@ -1,6 +1,6 @@
 
 export async function GET() {
-  const apiUrl = 'http://localhost:4567/v1/players';
+  const apiUrl = 'http://mc:4567/v1/players';
   let players = []; // Initialize players as an empty array to ensure it's always defined
   console.log("players api fired");
   try {

@@ -4,7 +4,7 @@ import { Rcon } from 'rcon-client';
 export async function GET() {
   console.log("Received GET request to /api/death")
   const rcon = new Rcon({
-    host: "localhost", // Your server's IP
+    host: "mc", // Your server's IP
     port: 25575,      // RCON port
     password: "change_me" // RCON password
   });

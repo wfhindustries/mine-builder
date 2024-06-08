@@ -22,7 +22,7 @@ const cacheDir = './cache';
 doAuth(username, cacheDir).then((response) => {
     console.log(response)
     const bot = mineflayer.createBot({
-        host: 'localhost', // minecraft server ip
+        host: 'mc', // minecraft server ip
         username: username, // username to join as if auth is `offline`, else a unique identifier for this account. Switch if you want to change accounts
         auth: response, // for offline mode servers, you can set this to 'offline'
         port: 25565,              // set if you need a port that isn't 25565

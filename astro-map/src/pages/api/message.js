@@ -12,7 +12,7 @@ export async function POST({ request }) {
 
     // Setup RCON client
     const rcon = new Rcon({
-      host: "localhost", // or your Minecraft server's IP
+      host: "mc", // or your Minecraft server's IP
       port: 25575, // RCON port of your Minecraft server
       password: "change_me", // RCON password
     });

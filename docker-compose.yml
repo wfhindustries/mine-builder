@@ -18,5 +18,16 @@ services:
     stdin_open: true
     tty: true
     restart: unless-stopped
+  astro:
+    image: node:20
+    command: sh -c "npx astro dev --host"
+    working_dir: /app
+    volumes:
+      - ./astro-map:/app
+    ports:
+      - "4321:4321"
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
 volumes:
   data: {}
